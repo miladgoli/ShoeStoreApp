@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.shoesstore.model.util.ExtensionsKt" />
+
+        <variable
+            name="shoe"
+            type="com.example.shoesstore.model.entity.Shoe" />
+
+        <variable
+            name="viewModel"
+            type="com.example.shoesstore.viewmodel.ShoeDetailViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.fragment.ShoeDetailFragment">
+
+
+        <ProgressBar
+            android:id="@+id/progressBarDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/tvErrorDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/peyda_medium"
+            android:textSize="18sp"
+            tools:text="خطا در بارگذاری اطلاعات" />
+
+        <ScrollView
+            android:id="@+id/contentScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="88dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivDetailShoeImage"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="32dp"
+                    android:layerType="software"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/roundedImageView"
+                    tools:src="@tools:sample/avatars" />
+
+                <ImageView
+                    android:id="@+id/ivDetailFavoriteIcon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="8dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:tint="@color/sh_red"
+                    app:layout_constraintEnd_toEndOf="@+id/tvDetailShoeBrand"
+                    app:layout_constraintStart_toStartOf="@+id/tvDetailShoeBrand"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDetailShoeBrand"
+                    tools:src="@drawable/ic_like_outline" />
+
+
+                <TextView
+                    android:id="@+id/tvDetailShoeName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/peyda_black"
+                    android:gravity="center"
+                    android:letterSpacing="0.05"
+                    android:text="@{shoe.name}"
+                    android:textAlignment="center"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivDetailShoeImage"
+                    tools:text="Nike Air Max" />
+
+                <TextView
+                    android:id="@+id/tvDetailShoeBrand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/peyda_medium"
+                    android:text="@{shoe.brand}"
+                    android:textAlignment="center"
+                    android:textColor="@color/sh_red"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvDetailShoeName"
+                    app:layout_constraintStart_toStartOf="@id/tvDetailShoeName"
+                    app:layout_constraintTop_toBottomOf="@id/tvDetailShoeName"
+                    tools:text="Nike" />
+
+                <TextView
+                    android:id="@+id/tvDetailShoePrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/peyda_black"
+                    android:text="@{ExtensionsKt.toFormattedPrice(shoe.price) + `  تومان`}"
+                    android:textColor="@color/sh_green"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivDetailFavoriteIcon"
+                    tools:text="150.000 تومان" />
+
+                <TextView
+                    android:id="@+id/tvDetailShoeDesc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/peyda_medium"
+                    android:justificationMode="inter_word"
+                    android:letterSpacing="0.12"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@{shoe.description}"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@id/tvDetailShoeName"
+                    app:layout_constraintStart_toStartOf="@id/tvDetailShoeName"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDetailShoePrice"
+                    tools:ignore="UnusedAttribute"
+                    tools:text="Description of the shoe goes here." />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnAddToCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_cart"
+            app:backgroundTint="@color/sh_green"
+            app:tint="@color/sh_white" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

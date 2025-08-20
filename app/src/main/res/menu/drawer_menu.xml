@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/homeFragment"
+            android:icon="@drawable/ic_home"
+            android:title="صفحه اصلی" />
+        <item
+            android:id="@+id/cartFragment"
+            android:icon="@drawable/ic_cart"
+            android:title="سبد خرید" />
+        <item
+            android:id="@+id/favoritesFragment"
+            android:icon="@drawable/ic_like_outline"
+            android:title="علاقه‌مندی‌ها" />
+    </group>
+</menu>

@@ -1,0 +1,9 @@
+<resources>
+
+    <style name="Theme.ShoesStore" parent="Base.Theme.ShoesStore">
+        <item name="colorPrimary">@color/sh_red</item>
+        <item name="colorOnPrimary">@color/sh_black</item>
+        <item name="android:windowBackground">@color/sh_black</item>
+        <item name="android:statusBarColor">@color/sh_red</item>
+    </style>
+</resources>

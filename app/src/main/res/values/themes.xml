@@ -1,0 +1,63 @@
+<resources>
+
+    <style name="Base.Theme.ShoesStore" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/sh_red</item>
+        <item name="colorOnPrimary">@color/sh_white</item>
+        <item name="android:windowBackground">@color/sh_dark_white</item>
+        <item name="android:statusBarColor">@color/sh_red</item>
+
+
+        <item name="textAppearanceDisplayLarge">@style/AppTypography</item>
+        <item name="textAppearanceDisplayMedium">@style/AppTypography</item>
+        <item name="textAppearanceDisplaySmall">@style/AppTypography</item>
+        <item name="textAppearanceHeadlineLarge">@style/AppTypography</item>
+        <item name="textAppearanceHeadlineMedium">@style/AppTypography</item>
+        <item name="textAppearanceHeadlineSmall">@style/AppTypography</item>
+        <item name="textAppearanceTitleLarge">@style/AppTypography</item>
+        <item name="textAppearanceTitleMedium">@style/AppTypography</item>
+        <item name="textAppearanceTitleSmall">@style/AppTypography</item>
+        <item name="textAppearanceBodyLarge">@style/AppTypography</item>
+        <item name="textAppearanceBodyMedium">@style/AppTypography</item>
+        <item name="textAppearanceBodySmall">@style/AppTypography</item>
+        <item name="textAppearanceLabelLarge">@style/AppTypography</item>
+        <item name="textAppearanceLabelMedium">@style/AppTypography</item>
+        <item name="textAppearanceLabelSmall">@style/AppTypography</item>
+    </style>
+
+    <style name="Theme.ShoesStore" parent="Base.Theme.ShoesStore" />
+
+    <style name="AppTypography" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:fontFamily">@font/peyda_regular</item>
+        <item name="fontFamily">@font/peyda_regular</item>
+    </style>
+
+    <style name="App.Toolbar.TitleText" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:fontFamily">@font/peyda_bold</item>
+        <item name="fontFamily">@font/peyda_bold</item>
+        <item name="android:textColor">@color/sh_white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="App.Drawer.ItemText" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:fontFamily">@font/peyda_regular</item>
+        <item name="fontFamily">@font/peyda_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+
+    <style name="roundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">15dp</item>
+    </style>
+
+    <style name="App.Toolbar.Theme" parent="ThemeOverlay.Material3.Dark.ActionBar">
+        <item name="colorControlNormal">@color/sh_white</item>
+        <item name="titleTextAppearance">@style/App.Toolbar.TitleText</item>
+    </style>
+
+    <style name="App.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="titleTextAppearance">@style/App.Toolbar.TitleText</item>
+        <item name="colorControlNormal">@color/sh_white</item>
+
+    </style>
+</resources>
